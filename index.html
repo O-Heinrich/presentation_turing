@@ -1,44 +1,184 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section data-visibility="hidden">Slide X</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Turing Maschine</h1>
+				<img src="assets/Model_of_a_Turing_machine.jpg" alt="Bild eines Turing Machine Models">
+			</section>
+			<section>
+				<ul>
+					<li>Left/Right Arrow Key - Move Slides</li>
+					<li>Up/Down Arrow Key - Extra Slides</li>
+					<li>O - Overview</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+					<h1><a href="https://de.wikipedia.org/wiki/Menge_(Mathematik)">Mengen</a></h1>
+					<img src="assets/Example_of_a_set.svg.png" alt="Bildlische Darstellung einer Menge" width="900"
+						height="500">
+				</section>
+				<section>
+					<ul>
+						<li>Unterschiedliche Elemente <br> { 0, 1, 42 }, { a, b, 0 }, <s>{ 0, 5, 0 }</s></li>
+						<li>Beliebige Anzahl</li>
+						<li>Leere Menge <br> ∅ = { }</li>
+						<li>Unendlich Große Mengen <br> ℕ, ℝ</li>
+						<li>Element von: 1 ∈ ℕ</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Teilmenge</h2>
+						{ 0, 1 } ⊆ ℕ
+						{ a, b } ⊆ { a, b }
+				</section>
+			</section>
+			<section>
+				<h1><a href="https://www.mathematik.uni-marburg.de/~gumm/Lehre/SS08/TI/02%20Grundbegriffe.pdf">Alphabet,
+						Wort, Sprache</a></h1>
+			</section>
+			<section>
+				<section>
+					<h2>Alphabet</h2>
+					<ul>
+						<li>Menge an Zeichen/Symbolen/Buchstaben</li>
+						<li>Endlich</li>
+						<li>Nicht Leer</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Σ = { a, b }</li>
+						<li>Σ = { 0, 1 }</li>
+						<li>Σ = { a, ..., z, A, ..., Z }</li>
+						<li>Σ = { 1 }</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Wort</h2>
+					<ul>
+						<li>Endliche Folge von Zeichen aus einem Alphabet Σ</li>
+						<li>Leeres Wort: ε</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>Worte über { 0, 1 }: ε, 0, 100, 000</li>
+						<li>Worte über { a, ..., z }: ε, a, ab, hello, world</li>
+					</ul>
+				</section>
+				<section>
+					Σ* Menge aller Wörter über ein Alphabet Σ
+				</section>
+				<section>
+					<h3>Operationen/Eigenschaften</h3>
+					<ul>
+						<li>Konkatenation: u + v = uv</li>
+						<li>Länge: | aaa | = 3; | ε | = 0 </li>
+						<li>Präfix: Wenn u + v = w -> u ist Präfix von w</li>
+						<li>Suffix: Wenn u + v = w -> v ist Suffix von w</li>
+						<li>Teilwort: Wenn u + t + v = w -> t ist Teilwort von w</li>
+						<li>w ist Präfix, Suffix und Teilwort von w</li>
+						<li>ε ist Präfix, Suffix und Teilwort von w</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Sprache</h2>
+					L ⊆ Σ*
+					<br>
+					Σ = { a, b }
+					<br>
+					Σ* = { ε, a, b, aa, ab, ba, ...}
+				</section>
+				<section>
+					<ul>
+						<li>L<sub>1</sub> = { aa, ab, ba, bb }</li>
+						<li>L<sub>2</sub> = { ε, a, aa, ab, aaa, ...}</li>
+						<li>L<sub>3</sub> = { }</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>L<sub>4</sub> = Menge aller Wörter mit mehr a als b</li>
+						<li>L<sub>5</sub> = Menge aller Wörter mit keinen 2 a nebeneinander</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<h1><a href="https://info-wsf.de/turingmaschine/">Turing Maschine</a></h1>
+				<img src="assets/Alan_Turing.jpg" alt="Alan Turing" width="325" height="419"><br>
+				Entwickelt 1936/37 von Alan Turing
+			</section>
+			<section>
+				<section>
+					<h2>Formale Bestandteile</h2>
+					<ul>
+						<li>Eingabealphabet; X = { a, b }</li>
+						<li>Bandalphabet, Obermenge des Eingabealphabets;<br>B = { a, b, A, # }; enthält ein "Blank"</li>
+						<li>Zustände (endliche Menge an Zuständen) Z</li>
+						<li>Anfangszustand (Element von Z)</li>
+						<li>Endzustände (Teilmenge von Z)</li>
+						<li>Überführungsfunktion</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Überführungsfunktion</h3>
+					<ul>
+						<li>Liest ein Symbol aus dem Bandalphabet ein</li>
+						<li>Kennt den aktuellen Zustand (kein Endzustand)</li>
+						<li>Entscheidet das Symbol mit einem neuem zu überschreiben</li>
+						<li>Entscheidet den Kopf nach rechts, links oder garnicht zu bewegen</li>
+					</ul>
+					<img src="assets/Turingmaschine.png" alt="Band einer Turing Maschine" width="360" height="260">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2><a href="https://flexikon.doccheck.com/de/Turing-Maschine#:~:text=Die%20Turing%2DMaschine%20ist%20ein,durch%20einen%20Algorithmus%20l%C3%B6sen%20lassen.">Entscheidbarkeit</a></h2>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-				showHiddenSlides: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			showHiddenSlides: true,
 
-				slideNumber: 'c/t',
+			slideNumber: 'c/t',
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
