@@ -186,7 +186,7 @@
 					<img src="./assets/turing_example_1.png" alt="Erstes Beispiel für eine turingmaschine">
 				</section>
 				<section>
-					<pre><code data-trim>
+					<pre data-cc-display="icons"><code data-trim>
 input: 'ababbbaba'
 blank: '#'
 start state: q0
@@ -207,7 +207,7 @@ table:
 					<img src="./assets/turing_example_2.png" alt="Zweites Beispiel für eine turingmaschine">
 				</section>
 				<section>
-					<pre><code data-trim>
+					<pre data-cc-display="icons"><code data-trim>
 input: 'abababbaaba'
 blank: '#'
 start state: q0
@@ -239,6 +239,7 @@ table:
 	<script src="plugin/notes/notes.js"></script>
 	<script src="plugin/markdown/markdown.js"></script>
 	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/copycode/copycode.js"></script>
 	<script>
 		// More info about initialization & config:
 		// - https://revealjs.com/initialization/
@@ -250,7 +251,7 @@ table:
 			slideNumber: 'c/t',
 
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode]
 		});
 	</script>
 </body>
