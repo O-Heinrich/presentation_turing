@@ -19,7 +19,7 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>Turing Maschine</h1>
+				<h1>Turingmaschine</h1>
 				<img src="./assets/Model_of_a_Turing_machine.jpg" alt="Bild eines Turing Machine Models">
 			</section>
 			<section>
@@ -46,7 +46,7 @@
 				</section>
 				<section>
 					<h3>Teilmenge</h2>
-						{ 0, 1 } ⊆ ℕ
+						{ 0, 1 } ⊆ ℕ<br>
 						{ a, b } ⊆ { a, b }
 				</section>
 			</section>
@@ -126,21 +126,14 @@
 				</section>
 			</section>
 			<section>
-				<h1><a href="https://info-wsf.de/turingmaschine/">Turing Maschine</a></h1>
+				<h1><a href="https://info-wsf.de/turingmaschine/">Turingmaschine</a></h1>
 				<img src="./assets/Alan_Turing.jpg" alt="Alan Turing" width="325" height="419"><br>
 				Entwickelt 1936/37 von Alan Turing
 			</section>
 			<section>
 				<section>
-					<h2>Formale Bestandteile</h2>
-					<ul>
-						<li>Eingabealphabet; X = { a, b }</li>
-						<li>Bandalphabet, Obermenge des Eingabealphabets;<br>B = { a, b, A, # }; enthält ein "Blank"</li>
-						<li>Zustände (endliche Menge an Zuständen) Z</li>
-						<li>Anfangszustand (Element von Z)</li>
-						<li>Endzustände (Teilmenge von Z) - akzeptierend oder nicht akzeptierend</li>
-						<li>Überführungsfunktion</li>
-					</ul>
+					<h2>Funktionsweise</h2>
+					<img src="./assets/Turingmaschine.png" alt="Band einer Turingmaschine" width="451" height="325">
 				</section>
 				<section>
 					<h3>Überführungsfunktion</h3>
@@ -150,12 +143,23 @@
 						<li>Entscheidet das Symbol mit einem neuem zu überschreiben</li>
 						<li>Entscheidet den Kopf nach rechts, links oder garnicht zu bewegen</li>
 					</ul>
-					<img src="./assets/Turingmaschine.png" alt="Band einer Turing Maschine" width="360" height="260">
+					<img src="./assets/Turingmaschine.png" alt="Band einer Turingmaschine" width="360" height="260">
+				</section>
+				<section>
+					<h2>Formale Bestandteile</h2>
+					<ul>
+						<li class="fragment fade-up">Eingabealphabet; Σ = { a, b }</li>
+						<li class="fragment fade-up">Bandalphabet, Obermenge des Eingabealphabets;<br>Γ = { a, b, A, # }; enthält ein "Blank"</li>
+						<li class="fragment fade-up">Zustände (endliche Menge an Zuständen) Z</li>
+						<li class="fragment fade-up">Startzustand (Element von Z)</li>
+						<li class="fragment fade-up">(akzeptierende oder nicht akzeptierende) Endzustände (Teilmenge von Z)</li>
+						<li class="fragment fade-up">Überführungsfunktion</li>
+					</ul>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2><a href="https://flexikon.doccheck.com/de/Turing-Maschine#:~:text=Die%20Turing%2DMaschine%20ist%20ein,durch%20einen%20Algorithmus%20l%C3%B6sen%20lassen.">Entscheidbarkeit</a></h2>
+					<h2><a href="https://flexikon.doccheck.com/de/Turing-Maschine#Bedeutung">Entscheidbarkeit</a></h2>
 				</section>
 				<section>
 					<ul>
@@ -167,7 +171,7 @@
 				<section>
 					<h3>Halteproblem</h3>
 					Es gibt keinen Algorithmus, der für ein beliebiges Programm entscheiden kann, ob es terminiert.<br>
-					semi-entscheidbar
+					-> semi-entscheidbar
 				</section>
 			</section>
 		</div>
