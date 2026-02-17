@@ -88,3 +88,7 @@ Ein Problem ist semi-entscheidbar -> Es gibt eine Turingmaschine, welche das Pro
 ### Halteproblem
 
 Beim Halteproblem wird nach einem Algorithmus gesucht, welcher für ein beliebiges Programm entscheidet, ob dieses Programm irgendwann stoppt oder beliebig lang weiterläuft. Das Halteproblem ist ein Beispiel für ein semi-entscheidbares Problem: Es gibt eine Turingmaschine, welche stoppende Programme erkennt und akzeptiert, aber eventuell für unendlich lange laufende Programme selbst unendlich lang weiterläuft.
+
+### Turing-Vollständigkeit
+
+Ein System ist Turing-vollständig, wenn es alles berechnen kann, was auch eine Turingmaschine berechnen kann. Einschränkungen wie z. B. Speicher werden hier nicht mit einberechnet -> die meisten Programmiersprachen sind Turing-vollständig.

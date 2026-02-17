@@ -120,8 +120,8 @@
 				</section>
 				<section>
 					<ul>
-						<li>L<sub>4</sub> = Menge aller Wörter mit mehr a als b</li>
-						<li>L<sub>5</sub> = Menge aller Wörter mit keinen 2 a nebeneinander</li>
+						<li>L<sub>4</sub> = Menge aller Wörter mit keinen 2 a nebeneinander</li>
+						<li>L<sub>5</sub> = Menge aller Wörter mit mehr a als b</li>
 					</ul>
 				</section>
 			</section>
@@ -150,9 +150,9 @@
 					<ul>
 						<li class="fragment fade-up">Eingabealphabet; Σ = { a, b }</li>
 						<li class="fragment fade-up">Bandalphabet, Obermenge des Eingabealphabets;<br>Γ = { a, b, A, # }; enthält ein "Blank"</li>
-						<li class="fragment fade-up">Zustände (endliche Menge an Zuständen) Z</li>
-						<li class="fragment fade-up">Startzustand (Element von Z)</li>
-						<li class="fragment fade-up">(akzeptierende oder nicht akzeptierende) Endzustände (Teilmenge von Z)</li>
+						<li class="fragment fade-up">Zustände (endliche Menge an Zuständen) Q</li>
+						<li class="fragment fade-up">Startzustand (Element von Q)</li>
+						<li class="fragment fade-up">(akzeptierende oder nicht akzeptierende) Endzustände (Teilmenge von Q)</li>
 						<li class="fragment fade-up">Überführungsfunktion</li>
 					</ul>
 				</section>
@@ -172,6 +172,64 @@
 					<h3>Halteproblem</h3>
 					Es gibt keinen Algorithmus, der für ein beliebiges Programm entscheiden kann, ob es terminiert.<br>
 					-> semi-entscheidbar
+				</section>
+				<section>
+					<h3>Turing-Vollständigkeit</h3>
+					Ein System kann alles berechnen, was eine Turingmaschine berechnen kann
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2><a href="https://turingmachine.io/">Beispiele</a></h2>
+				</section>
+				<section>
+					<img src="./assets/turing_example_1.png" alt="Erstes Beispiel für eine turingmaschine">
+				</section>
+				<section>
+					<pre><code data-trim>
+input: 'ababbbaba'
+blank: '#'
+start state: q0
+table:
+  q0:
+    b: {R: q0}
+    a: {R: q1}
+    '#': {R: accept}
+  q1:
+    a: {R: reject}
+    b: {R: q0}
+    '#': {R: accept}
+  accept:
+  reject:
+					</code></pre>
+				</section>
+				<section>
+					<img src="./assets/turing_example_2.png" alt="Zweites Beispiel für eine turingmaschine">
+				</section>
+				<section>
+					<pre><code data-trim>
+input: 'abababbaaba'
+blank: '#'
+start state: q0
+table:
+  q0:
+    a: {write: _, L: q1}
+    [b, _]: {R: q0}
+    '#': {R: reject}
+  q1:
+    b: {write: _, R: q0}
+    _: {L: q1}
+    '#': {R: q2}
+  q2:
+    [a, _]: {R: q2}
+    b: {write: _, L: q3}
+    '#': {R: accept}
+  q3:
+    [a, b, _]: {L: q3}
+    '#': {R: q0}
+  accept:
+  reject:
+					</code></pre>
 				</section>
 			</section>
 		</div>
