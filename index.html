@@ -183,6 +183,7 @@
 					<h2><a href="https://turingmachine.io/">Beispiele</a></h2>
 				</section>
 				<section>
+					L<sub>4</sub> = Menge aller Wörter mit keinen 2 a nebeneinander<br>
 					<img src="./assets/turing_example_1.png" alt="Erstes Beispiel für eine turingmaschine">
 				</section>
 				<section>
@@ -192,7 +193,7 @@ blank: '#'
 start state: q0
 table:
   q0:
-    b: {R: q0}
+    b: {R}
     a: {R: q1}
     '#': {R: accept}
   q1:
@@ -204,6 +205,7 @@ table:
 					</code></pre>
 				</section>
 				<section>
+					L<sub>5</sub> = Menge aller Wörter mit mehr a als b<br>
 					<img src="./assets/turing_example_2.png" alt="Zweites Beispiel für eine turingmaschine">
 				</section>
 				<section>
@@ -214,22 +216,26 @@ start state: q0
 table:
   q0:
     a: {write: _, L: q1}
-    [b, _]: {R: q0}
+    [b, _]: {R}
     '#': {R: reject}
   q1:
     b: {write: _, R: q0}
-    _: {L: q1}
+    _: {L}
     '#': {R: q2}
   q2:
-    [a, _]: {R: q2}
+    [a, _]: {R}
     b: {write: _, L: q3}
     '#': {R: accept}
   q3:
-    [a, b, _]: {L: q3}
+    [a, b, _]: {L}
     '#': {R: q0}
   accept:
   reject:
 					</code></pre>
+				</section>
+				<section>
+					Inkrement<br>
+					<img src="./assets/turing_example_3.png" alt="Drittes Beispiel für eine turingmaschine">
 				</section>
 			</section>
 		</div>
